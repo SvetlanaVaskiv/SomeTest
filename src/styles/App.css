@@ -1,0 +1,46 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+#root {
+  display: flex;
+  justify-content: center;
+  background-color: black;
+  color: white;
+  margin: 20px;
+}
+.layout {
+  padding: 5px;
+  background-color: #deb97c;
+  border-radius: 50px;
+  margin: 5px;
+  font-family: serif;
+}
+.card {
+  padding: 10px;
+  margin: 5px;
+  color: black;
+}
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  align-items: center;
+}
+.react-select-container {
+  color: blueviolet;
+}
+.col-md-6 {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.rules {
+  width: 200px;
+}
