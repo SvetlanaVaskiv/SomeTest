@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import Button from "react-bootstrap/Button";
 import { Form, Card } from "react-bootstrap";
-import { Rules } from "../rules";
+import { Rules } from "./rules";
 export const Converter = () => {
   const [cm, setCm] = useState(0);
   const [rules, setRules] = useState(Rules);

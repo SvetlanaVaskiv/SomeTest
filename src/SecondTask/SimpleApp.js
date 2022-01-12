@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Button, Card, CloseButton, Form } from "react-bootstrap";
-import { Rules } from "../Rules";
+import { Rules } from "./Rules";
 import { v4 as uuidv4 } from "uuid";
 import { Link } from "react-router-dom";
+import { ConditionCard } from "./ConditionCard";
+import { ItemCard } from "./ItemCard";
 
 export const SympleApp = () => {
   let initialConditions = {
@@ -84,81 +86,3 @@ export const SympleApp = () => {
     </>
   );
 };
-
-export function ConditionCard({ ruleName, ruleOptions, onDeleteClick }) {
-  return (
-    <Card.Body key={ruleName}>
-      <Card.Text>
-        Name:{ruleName}
-        <br />
-        Options:{JSON.stringify(ruleOptions)}
-        <CloseButton onClick={() => onDeleteClick({ ruleOptions })} />
-      </Card.Text>
-    </Card.Body>
-  );
-}
-
-export function KeyValueArrayForm({ rule, onAddClick }) {
-  const [value, setValue] = useState("");
-  const [key, setKey] = useState("");
-
-  return (
-    <Card className="rules">
-      <Form>
-        <h3>{rule.name}</h3>
-        <Form.Group className="mb-3">
-          <Form.Label>FIELD NAME</Form.Label>
-          <Form.Control
-            type="text"
-            value={key}
-            onChange={(e) => setKey(e.target.value)}
-          />
-          <Form.Label>FIELD VALUE</Form.Label>
-          <Form.Control
-            type="text"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-        </Form.Group>
-      </Form>
-      <Button onClick={() => onAddClick({ [key]: value })}>Add</Button>
-    </Card>
-  );
-}
-export function ValueArrayForm({ rule, onAddClick }) {
-  const [value, setValue] = useState("");
-
-  return (
-    <Card className="rules">
-      <Form>
-        <h3>{rule.name}</h3>
-        <Form.Group className="mb-3">
-          <Form.Label>VALUE</Form.Label>
-          <Form.Control
-            type="text"
-            value={value}
-            onChange={(e) => setValue(e.target.value)}
-          />
-        </Form.Group>
-      </Form>
-      <Button onClick={() => onAddClick(value)}>Add</Button>
-    </Card>
-  );
-}
-
-export function ItemCard({ item }) {
-  return (
-    <Card style={{ width: "18rem", padding: "20px" }}>
-      <Card.Body>
-        <Card.Text>
-          {" "}
-          Name:{item.name}
-          <br />
-          Email:{item.email}
-          <br />
-          Disabled: {item.disabled.toString()}
-        </Card.Text>
-      </Card.Body>
-    </Card>
-  );
-}

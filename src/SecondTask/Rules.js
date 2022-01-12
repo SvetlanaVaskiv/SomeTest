@@ -1,4 +1,5 @@
-import { KeyValueArrayForm, ValueArrayForm } from "./components/SimpleApp";
+import { KeyValueArrayForm } from "./KeyValueArrayForm";
+import { ValueArrayForm } from "./ValueArrayForm";
 
 export const Rules = [
   { name: "include", fn: include, form: KeyValueArrayForm },

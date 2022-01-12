@@ -1,6 +1,6 @@
 import "../src/styles/App.css";
-import { Converter } from "./FirstTask/components/Converter";
-import { SympleApp } from "./SecondTask/components/SimpleApp";
+import { Converter } from "./FirstTask/Converter";
+import { SympleApp } from "./SecondTask/SimpleApp";
 import {
   BrowserRouter as Router,
   Route,
